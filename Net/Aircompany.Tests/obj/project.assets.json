@@ -4974,11 +4974,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Рабочий стол\\Aircompany\\Aircompany.Tests\\Aircompany.Tests.csproj",
+      "projectUniqueName": "D:\\Учёба 3 курс 1 сем\\Epam\\lab7\\aircompany\\Net\\Aircompany.Tests\\Aircompany.Tests.csproj",
       "projectName": "Aircompany.Tests",
-      "projectPath": "D:\\Рабочий стол\\Aircompany\\Aircompany.Tests\\Aircompany.Tests.csproj",
+      "projectPath": "D:\\Учёба 3 курс 1 сем\\Epam\\lab7\\aircompany\\Net\\Aircompany.Tests\\Aircompany.Tests.csproj",
       "packagesPath": "C:\\Users\\Евгений\\.nuget\\packages\\",
-      "outputPath": "D:\\Рабочий стол\\Aircompany\\Aircompany.Tests\\obj\\",
+      "outputPath": "D:\\Учёба 3 курс 1 сем\\Epam\\lab7\\aircompany\\Net\\Aircompany.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Евгений\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4995,8 +4995,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Рабочий стол\\Aircompany\\Aircompany\\Aircompany.csproj": {
-              "projectPath": "D:\\Рабочий стол\\Aircompany\\Aircompany\\Aircompany.csproj"
+            "D:\\Учёба 3 курс 1 сем\\Epam\\lab7\\aircompany\\Net\\Aircompany\\Aircompany.csproj": {
+              "projectPath": "D:\\Учёба 3 курс 1 сем\\Epam\\lab7\\aircompany\\Net\\Aircompany\\Aircompany.csproj"
             }
           }
         }
