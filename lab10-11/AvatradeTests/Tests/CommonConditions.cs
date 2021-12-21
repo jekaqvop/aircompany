@@ -38,7 +38,7 @@ namespace AvatradeTests.Tests
         public void CloseBrowser()
         {
             Log.Info($"Close test: {TestContext.CurrentContext.Test.MethodName}");
-            //DriverManager.CloseWebDriver();
+            DriverManager.CloseWebDriver();
         }
     }
 }
