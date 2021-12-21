@@ -31,7 +31,7 @@ namespace AvatradeTests.Tests
         {
             User testUser = CreatorUser.WithCredentialsFromProperty();
             driver = DriverManager.GetWebDriver();
-            selectAccountPage = new LoginPage(driver).OpenPage().ClickInLoginCabinet().EnterLoginAndPassword(testUser).SignIn();
+            selectAccountPage = new LoginPage(driver).OpenPage().EnterLoginAndPassword(testUser).SignIn();
         }
 
         [TearDown]

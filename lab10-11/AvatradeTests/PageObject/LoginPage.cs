@@ -13,25 +13,18 @@ namespace AvatradeTests.PageObject
     {
         public LoginPage(IWebDriver webDriver) : base(webDriver) { }
 
-        private static readonly string HOMEPAGE_URL = "https://www.ifxglobe.com/ru/";
-        private readonly By btnInLoginCabinet = By.XPath("//*[@id='ntoolbar']/div[7]/button");
-        private readonly By txtLogin = By.XPath("//*[@id='login']");
-        private readonly By txtPassword = By.XPath("//*[@id='pass']");
-        private readonly By btnLogin = By.XPath("//*[@id='client_form_auth']/div/div[1]/div[3]/button[2]");
+        private static readonly string HOMEPAGE_URL = "https://cabinet.ifxglobe.com/client/ru/login";
+        
+        private readonly By txtLogin = By.XPath("//input[@ng-model='login']");
+        private readonly By txtPassword = By.XPath("//input[@ng-model='pass']");
+        private readonly By btnLogin = By.XPath("//button[@class='btn btn-main btn-form']");
         
         public LoginPage OpenPage()
         {
             driver.Navigate().GoToUrl(HOMEPAGE_URL);
             Log.Info("Open home Page");
             return this;
-        }
-
-        public LoginPage ClickInLoginCabinet()
-        {
-            WaitForVisibilityOfElemen(driver, btnInLoginCabinet).Click();
-            Log.Info("Click In Login Cabinet");
-            return this;
-        }
+        }        
 
         public LoginPage EnterLoginAndPassword(User user)
         {

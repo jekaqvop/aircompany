@@ -31,7 +31,7 @@ namespace AvatradeTests.PageObject
         public AccountManagementPage AddNewInvoice()
         {
             WaitForVisibilityOfElemen(driver, btnAddInvoice).Click();
-            Log.Info("Click button AddNewInvoice");
+            Log.Info("Click button Add New Invoice");
             return this;
         }
 
@@ -45,7 +45,7 @@ namespace AvatradeTests.PageObject
         public bool IsVisibilityAddMyInvoice()
         {
             Console.WriteLine(WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim());
-            bool isVisibilityNotAddInvoice = WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim().Equals("Указаный номер счета уже прикреплен к Вашему текущему счету");
+            bool isVisibilityNotAddInvoice = WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim().Equals("Указаный номер счета уже прикреплен к другому счету");
             Log.Info($"Check out text: {WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim()}");
             return isVisibilityNotAddInvoice;
         }

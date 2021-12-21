@@ -18,7 +18,7 @@ namespace AvatradeTests.Tests
 {
     class Tests : CommonConditions
     {
-        
+
         [Test]
         public void NotAddInvoiceTest()
         {
@@ -36,7 +36,6 @@ namespace AvatradeTests.Tests
             accountManagementPage.AddNewInvoice();
             Assert.IsTrue(accountManagementPage.IsVisibilityAddMyInvoice());
         }
-
 
         [Test]
         public void СalculateDepositTest()
@@ -67,8 +66,9 @@ namespace AvatradeTests.Tests
         {
             tradingPage = selectAccountPage.OpenTradingPage();
             tradingPage.ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().
-                ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss()
                 .ClickSell();
             Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
         }
@@ -113,7 +113,8 @@ namespace AvatradeTests.Tests
         {
             replenishmentDemoAccountPage = selectAccountPage.OpenReplenishmentDemoAccountPage();
             string price = "1111";
-            replenishmentDemoAccountPage.EnterAddSumPrice(price).ClickBtnEnroll();
+            replenishmentDemoAccountPage.EnterAddSumPrice(price)
+                .ClickBtnEnroll();
             Assert.IsTrue(replenishmentDemoAccountPage.IsVisibilitySuccessAddMoney());
         }
 
