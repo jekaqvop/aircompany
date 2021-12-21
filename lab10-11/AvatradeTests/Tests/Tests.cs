@@ -18,15 +18,7 @@ namespace AvatradeTests.Tests
 {
     class Tests : CommonConditions
     {
-        [Test]
-        public void AddFundsToYourAccountTest()
-        {
-            replenishmentDemoAccountPage = selectAccountPage.OpenReplenishmentDemoAccountPage();
-            string price = "1111";
-            replenishmentDemoAccountPage.EnterAddSumPrice(price).ClickBtnEnroll();
-            Assert.IsTrue(replenishmentDemoAccountPage.IsVisibilitySuccessAddMoney());
-        }
-
+        
         [Test]
         public void NotAddInvoiceTest()
         {
@@ -115,6 +107,16 @@ namespace AvatradeTests.Tests
                 .SaveSelectShoulder();
             Assert.IsTrue(personalInformation.IsChangeSelectShoulder());
         }
+
+        [Test]
+        public void AddFundsToYourAccountTest()
+        {
+            replenishmentDemoAccountPage = selectAccountPage.OpenReplenishmentDemoAccountPage();
+            string price = "1111";
+            replenishmentDemoAccountPage.EnterAddSumPrice(price).ClickBtnEnroll();
+            Assert.IsTrue(replenishmentDemoAccountPage.IsVisibilitySuccessAddMoney());
+        }
+
 
         [Test]
         public void ChangePasswordTestInvestor()

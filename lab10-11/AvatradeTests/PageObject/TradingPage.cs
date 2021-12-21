@@ -88,13 +88,7 @@ namespace AvatradeTests.PageObject
             double takeProfit = double.Parse(WaitForVisibilityOfElemen(driver, inputValueTakeProfit).GetAttribute("value").Replace(".", ","));
             return new Deal(stopLoss, takeProfit).ToString();
         }
-        /*public bool IsValidSell()
-        {
-            Console.WriteLine("hi");
-            Console.WriteLine(WaitForVisibilityOfElemen(driver, iframeTitlesellErr));
-            //.SwitchTo().Frame(WaitForVisibilityOfElemen(driver, iframeTitlesellErr))
-            return true;//WaitForVisibilityOfElemen(driver.SwitchTo().Frame(WaitForVisibilityOfElemen(driver, iframeTitlesellErr)), spnTitlesellErr).Text.Trim().Equals("Ордер успешно установлен");
-        }*/
+       
     }
 }
-//table[@class='table table_main']/tbody/tr/td[6]
+
