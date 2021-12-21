@@ -68,11 +68,6 @@ namespace AvatradeTests.PageObject
             return this;
         }
 
-        public bool IsValidBuy()
-        {            
-            return WaitForVisibilityOfElemen(driver, spnTitleby).Text.Equals("");             
-        }
-
         public CurrentTransactionsPage OpenCurrentTransactionsPage()
         {
             Thread.Sleep(5000);
@@ -86,6 +81,7 @@ namespace AvatradeTests.PageObject
         {
             double stopLoss = double.Parse(WaitForVisibilityOfElemen(driver, inputValueStopLos).GetAttribute("value").Replace(".", ","));
             double takeProfit = double.Parse(WaitForVisibilityOfElemen(driver, inputValueTakeProfit).GetAttribute("value").Replace(".", ","));
+            Log.Info("Get Created Deal To String");
             return new Deal(stopLoss, takeProfit).ToString();
         }
        

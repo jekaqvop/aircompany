@@ -29,15 +29,6 @@ namespace AvatradeTests.Tests
         }
 
         [Test]
-        public void AddInvoiceThathasAlreadyBeenAddedTest()
-        {
-            accountManagementPage = selectAccountPage.ClickSettingInvoice().OpenAccountManagementPage();
-            accountManagementPage.EnterInvoiceAndPassword(CreatorUser.JoiningMyAccountFromProperty());
-            accountManagementPage.AddNewInvoice();
-            Assert.IsTrue(accountManagementPage.IsVisibilityAddMyInvoice());
-        }
-
-        [Test]
         public void СalculateDepositTest()
         {
             traderCalculatorPage = selectAccountPage.OpenTraderCalculatorPage();
@@ -60,19 +51,7 @@ namespace AvatradeTests.Tests
                 .ClickBuy();
             Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
         }
-
-        [Test]
-        public void SellTest()
-        {
-            tradingPage = selectAccountPage.OpenTradingPage();
-            tradingPage.ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickSell();
-            Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
-        }
-
+       
         [Test]
         public void ChangePasswordTest()
         {
@@ -95,6 +74,14 @@ namespace AvatradeTests.Tests
             Assert.IsTrue(personalInformation.IsChangeCurrentType());
         }
 
+        [Test]
+        public void AddInvoiceThathasAlreadyBeenAddedTest()
+        {
+            accountManagementPage = selectAccountPage.ClickSettingInvoice().OpenAccountManagementPage();
+            accountManagementPage.EnterInvoiceAndPassword(CreatorUser.JoiningMyAccountFromProperty());
+            accountManagementPage.AddNewInvoice();
+            Assert.IsTrue(accountManagementPage.IsVisibilityAddMyInvoice());
+        }
 
         [Test]
         public void SelectShoulderTest()
@@ -118,6 +105,17 @@ namespace AvatradeTests.Tests
             Assert.IsTrue(replenishmentDemoAccountPage.IsVisibilitySuccessAddMoney());
         }
 
+        [Test]
+        public void SellTest()
+        {
+            tradingPage = selectAccountPage.OpenTradingPage();
+            tradingPage.ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickSell();
+            Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
+        }
 
         [Test]
         public void ChangePasswordTestInvestor()

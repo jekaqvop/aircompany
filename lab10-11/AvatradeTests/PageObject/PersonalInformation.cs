@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AvatradeTests.Utils;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace AvatradeTests.PageObject
         public PersonalInformation OpenPanelChangePassword()
         {
             WaitForVisibilityOfElemen(driver, aChangePassword).Click();
+            Log.Info("Open Panel Change Password");
             return this;
         }
 
@@ -45,84 +47,99 @@ namespace AvatradeTests.PageObject
             WaitForVisibilityOfElemen(driver, txtOldPassword).SendKeys(pass);
             WaitForVisibilityOfElemen(driver, txtNewPassword).SendKeys(pass);
             WaitForVisibilityOfElemen(driver, txtRePassword).SendKeys(pass);
+            Log.Info("Input Similar My Password");
             return this;
         }
 
         public PersonalInformation ClickChangePassword()
         {
             WaitForVisibilityOfElemen(driver, btnGetNewPass).Click();
+            Log.Info("Click button Change Password");
             return this;
         }        
         
         public PersonalInformation OpenChangeTypeAccount()
         {
             WaitForVisibilityOfElemen(driver, divChangeTypeAccount).Click();
+            Log.Info("Click Open Change Type Account");
             return this;
         }
         
         public PersonalInformation ClickNewTypeAccount()
         {
             WaitForVisibilityOfElemen(driver, btnNewTypeAccount).Click();
+            Log.Info("Click new Type Account");
             return this;
         }
         public PersonalInformation ClickStandartTypeAccount()
         {
             WaitForVisibilityOfElemen(driver, btnStandartTypeAccount).Click();
+            Log.Info("Click Standart Type Account");
             return this;
         }
         
         public PersonalInformation SaveStandartTypeAccount()
         {
             WaitForVisibilityOfElemen(driver, btnSaveTypeAccount).Click();
+            Log.Info("Click Save Standart Type Account");
             return this;
         }
 
         public bool IsChangeCurrentType()
         {
+            Log.Info("Check Is True Change Current Type");
             return WaitForVisibilityOfElemen(driver, divMessage).Text.Trim().Equals("×\r\nВы выбрали текущий тип счета.");
         }
 
         public bool IsTrueChangePassword()
         {
+            Log.Info("Check Is True Change Password");
             return WaitForVisibilityOfElemen(driver, divChangePass).Text.Trim().Equals("×\r\nУспешно. Пароль изменен.");
         }
 
         public bool IsTrueChangePasswordInvestor()
         {
+            Log.Info("Check Is True Change Password Investor");
             return WaitForVisibilityOfElemen(driver, divChangePassInvestor).Text.Trim().Equals("×\r\nУспешно. Пароль изменен.");
         }
 
         public PersonalInformation OpenChangeShoulder()
         {
             WaitForVisibilityOfElemen(driver, btnChangeShoulder).Click();
+            Log.Info("Click Open Change Shoulder");
             return this;
         }
 
         public PersonalInformation ClickNewShoulder()
         {
             WaitForVisibilityOfElemen(driver, btnSelectShoulder).Click();
+            Log.Info("Click New select Shoulder");
             return this;
         }
         public PersonalInformation SelectShoulder()
         {
             WaitForVisibilityOfElemen(driver, btnSelect200Shoulder).Click();
+            Log.Info("Click Select Shoulder");
             return this;
         }
 
         public PersonalInformation SaveSelectShoulder()
         {
             WaitForVisibilityOfElemen(driver, saveChangeShoulder).Click();
+            Log.Info("Click button Save Select Shoulder");
             return this;
         }
 
         public bool IsChangeSelectShoulder()
         {
+            Log.Info("Check Is Change Select Shoulder");
             return WaitForVisibilityOfElemen(driver, messageChangeShoulder).Text.Trim().Equals("×\r\nВыбранное плечо уже установлено. Если вы хотите изменить это плечо, то выберите другое значение.");
         }
 
         public PersonalInformation OpenPanelChangePasswordInvestor()
         {
             WaitForVisibilityOfElemen(driver, aChangePasswordInvestor).Click();
+            Log.Info("Click Open Panel Change Password Investor");
             return this;
         }
 
@@ -131,6 +148,7 @@ namespace AvatradeTests.PageObject
             WaitForVisibilityOfElemen(driver, txtOldPasswordTrader).SendKeys(passTrader);
             WaitForVisibilityOfElemen(driver, txtNewPasswordInvestor).SendKeys(newPassInvestor);
             WaitForVisibilityOfElemen(driver, txtRePasswordInvestor).SendKeys(newPassInvestor);
+            Log.Info("Input Similar My Password Investor");
             return this;
         }
 
