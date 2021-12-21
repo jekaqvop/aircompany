@@ -38,7 +38,5 @@ namespace AvatradeTests.PageObject
             Log.Info("Check isVisibilitySuccessAddMoney: " + isVisibilitySuccessAddMoney.ToString());
             return isVisibilitySuccessAddMoney;
         }
-
-        
     }
 }

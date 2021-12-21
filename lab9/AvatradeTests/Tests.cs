@@ -28,8 +28,8 @@ namespace AvatradeTests
         public void StartPageSetup()
         {
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
-                "--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
+            /*chromeOptions.AddArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+                "--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");*/
             driver = new ChromeDriver(Directory.GetCurrentDirectory(), chromeOptions);
             selectAccountPage = new LoginPage(driver).OpenPage().ClickInLoginCabinet().EnterLogin(login).EnterPassword(testPassword).SignIn();
         }

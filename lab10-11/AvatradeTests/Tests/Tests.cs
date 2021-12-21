@@ -37,7 +37,7 @@ namespace AvatradeTests.Tests
         }
 
         [Test]
-        public void AddMyInvoiceTest()
+        public void AddInvoiceThathasAlreadyBeenAddedTest()
         {
             accountManagementPage = selectAccountPage.ClickSettingInvoice().OpenAccountManagementPage();
             accountManagementPage.EnterInvoiceAndPassword(CreatorUser.JoiningMyAccountFromProperty());
@@ -57,7 +57,7 @@ namespace AvatradeTests.Tests
                 .EnterVolumeLots("0.2")
                 .ClickAccountCurrency()
                 .Calculate();
-            Assert.IsTrue(traderCalculatorPage.IsValidValues());
+            Assert.IsTrue(traderCalculatorPage.IsNotValidValues());
         }
 
         [Test]
@@ -67,17 +67,18 @@ namespace AvatradeTests.Tests
             tradingPage.ClickMinusStopLoss().ClickMinusStopLoss().ClickMinusStopLoss().ClickMinusStopLoss()
                 .ClickPlusTakeProfit().ClickPlusTakeProfit().ClickPlusTakeProfit().ClickPlusTakeProfit()
                 .ClickBuy();
-            Assert.IsTrue(tradingPage.IsValidBuy());
+            Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
         }
 
         [Test]
         public void SellTest()
         {
             tradingPage = selectAccountPage.OpenTradingPage();
-            tradingPage.ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
-                .ClickMinusTakeProfit().ClickMinusTakeProfit().ClickMinusTakeProfit().ClickMinusTakeProfit()
+            tradingPage.ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
+                .ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().
+                ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss().ClickPlusStopLoss()
                 .ClickSell();
-            Assert.IsTrue(tradingPage.IsNotValidSell());
+            Assert.AreEqual(tradingPage.GetCreatedDealToString(), tradingPage.OpenCurrentTransactionsPage().GetLastDealToString());
         }
 
         [Test]
@@ -88,6 +89,41 @@ namespace AvatradeTests.Tests
                 .InputSimilarMyPassword(CreatorUser.WithCredentialsFromProperty().Password)
                 .ClickChangePassword();
             Assert.IsTrue(personalInformation.IsTrueChangePassword());
+        }
+
+        [Test]
+        public void ChangeTypeInvoseTest()
+        {
+            personalInformation = selectAccountPage.OpenPersonalInformationPage();
+            personalInformation
+                .OpenChangeTypeAccount()
+                .ClickNewTypeAccount()
+                .ClickStandartTypeAccount()
+                .SaveStandartTypeAccount();
+            Assert.IsTrue(personalInformation.IsChangeCurrentType());
+        }
+
+
+        [Test]
+        public void SelectShoulderTest()
+        {
+            personalInformation = selectAccountPage.OpenPersonalInformationPage();
+            personalInformation
+                .OpenChangeShoulder()
+                .ClickNewShoulder()
+                .SelectShoulder()
+                .SaveSelectShoulder();
+            Assert.IsTrue(personalInformation.IsChangeSelectShoulder());
+        }
+
+        [Test]
+        public void ChangePasswordTestInvestor()
+        {
+            personalInformation = selectAccountPage.OpenPersonalInformationPage();
+            personalInformation.OpenPanelChangePasswordInvestor()
+                .InputSimilarMyPasswordInvestor(CreatorUser.WithCredentialsFromProperty().Password, CreatorUser.WithCredentialsFromProperty().PasswordInvestor)
+                .ClickChangePasswordInvestor();
+            Assert.IsTrue(personalInformation.IsTrueChangePasswordInvestor());
         }
     }
 }

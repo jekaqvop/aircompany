@@ -81,11 +81,11 @@ namespace AvatradeTests.PageObject
             return this;
         }
 
-        public bool IsValidValues()
+        public bool IsNotValidValues()
         {
             bool isValidValues = false;
-            isValidValues = WaitForVisibilityOfElemen(driver, txtPriceItem).Text.Equals("");           
-            Log.Info("Chekc IsValidValues");
+            isValidValues = WaitForVisibilityOfElemen(driver, txtPriceItem).GetAttribute("value").Equals("Не определено");    
+            Log.Info("Chekc Is Valid Values Trader Calculator");
             return isValidValues;
         }
     }

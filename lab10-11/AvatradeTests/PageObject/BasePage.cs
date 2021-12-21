@@ -20,13 +20,17 @@ namespace AvatradeTests.PageObject
 
         protected static IWebElement WaitForVisibilityOfElemen(IWebDriver driver, By webElement)
         {
-            return new WebDriverWait(driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.ElementIsVisible(webElement));
+            return new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementIsVisible(webElement));
         }
 
         protected static IWebElement FindElement(By locator)
         {
             return driver.FindElement(locator);
         }
-        
+
+       /* protected static IWebElement WaitForVisibilityOfElemen(IWebDriver driver, By webElement)
+        {
+            return new WebDriverWait(driver, TimeSpan.FromSeconds(100)).Until(ExpectedConditions.FrameToBeAvailableAndSwitchToIt(webElement));
+        }*/
     }
 }

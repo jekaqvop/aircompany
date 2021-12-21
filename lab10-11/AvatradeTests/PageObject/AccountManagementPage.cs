@@ -44,7 +44,8 @@ namespace AvatradeTests.PageObject
 
         public bool IsVisibilityAddMyInvoice()
         {
-            bool isVisibilityNotAddInvoice = WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim().Equals("Вы указали Ваш текущий номер счета");
+            Console.WriteLine(WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim());
+            bool isVisibilityNotAddInvoice = WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim().Equals("Указаный номер счета уже прикреплен к Вашему текущему счету");
             Log.Info($"Check out text: {WaitForVisibilityOfElemen(driver, divNotAddInvoice).Text.Trim()}");
             return isVisibilityNotAddInvoice;
         }
